@@ -9,13 +9,11 @@ import ChessKitEngineCore
 public enum EngineType: Int {
 
     case stockfish
-    case lc0
 
     /// Internal mapping from Swift to Obj-C type.
     var objc: EngineType_objc {
         switch self {
         case .stockfish:    return .stockfish
-        case .lc0:          return .lc0
         }
     }
 
@@ -23,7 +21,6 @@ public enum EngineType: Int {
     public var name: String {
         switch self {
         case .stockfish:    return "Stockfish"
-        case .lc0:          return "LeelaChessZero (Lc0)"
         }
     }
 
@@ -31,7 +28,6 @@ public enum EngineType: Int {
     public var version: String {
         switch self {
         case .stockfish:    return "16.1"
-        case .lc0:          return "0.29"
         }
     }
 
@@ -54,8 +50,6 @@ public enum EngineType: Int {
             } else {
                 return []
             }
-        case .lc0:
-            return []
         }
     }
 
